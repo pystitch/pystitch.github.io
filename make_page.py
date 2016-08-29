@@ -60,7 +60,7 @@ def render(source, rendered):
     </html>
     ''')
     result = tpl.render(pairs=pairs)
-    with open('out.html', 'w') as f:
+    with open('index.html', 'w') as f:
         f.write(result)
 
 
