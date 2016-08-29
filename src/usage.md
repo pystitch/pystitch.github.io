@@ -1,7 +1,3 @@
-# Usage
-
-This document will display some of `stitch`'s options.
-
 
 ## Code-Chunks
 
@@ -33,10 +29,9 @@ And some keyword arguments
 
 - `echo`
 - `eval`
-- `include`?
+- `include`
 
 The rest of this document is intended to demonstrate `stitch` in action.
-View the markdown source alongside the rendered HTML.
 
 ## Basics
 
@@ -55,6 +50,22 @@ print(x + 2)
 ```
 
 Now we see the output.
+
+## Options
+
+You can exclude the code, but include the output with teh `echo=False` option
+
+For example, we can show the fibbonnaci numbers less than 100:
+
+```{python}
+def fib(n):
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+
+print(", ".join(fib(100)))
+```
 
 ## Exceptions
 

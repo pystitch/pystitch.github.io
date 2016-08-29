@@ -5,6 +5,9 @@
         <link rel="stylesheet" type="text/css" href="default.css">
     </head>
     <body>
+    <h1>Stitch</h1>
+<p>Stitch is a small python library for writing reproducible reports in
+markdown.</p>
     <div class="container">
     
     <div class="area">
@@ -41,10 +44,9 @@ And some keyword arguments
 
 - `echo`
 - `eval`
-- `include`?
+- `include`
 
 The rest of this document is intended to demonstrate `stitch` in action.
-View the markdown source alongside the rendered HTML.
 
             </pre>
         </div>
@@ -77,11 +79,11 @@ View the markdown source alongside the rendered HTML.
 <ul>
 <li><code>echo</code></li>
 <li><code>eval</code></li>
-<li><code>include</code>?</li>
+<li><code>include</code></li>
 </ul>
 
 
-<p>The rest of this document is intended to demonstrate <code>stitch</code> in action. View the markdown source alongside the rendered HTML.</p>
+<p>The rest of this document is intended to demonstrate <code>stitch</code> in action.</p>
 
 
         </div>
@@ -143,6 +145,68 @@ Now we see the output.
     <hr>
     
     <div class="area">
+        <h2 id="options">Options</h2>
+
+        <div class="source">
+            <pre>
+                
+You can exclude the code, but include the output with teh `echo=False` option
+
+For example, we can show the fibbonnaci numbers less than 100:
+
+```{python}
+def fib(n):
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+
+print(", ".join(fib(100)))
+```
+
+            </pre>
+        </div>
+        <div class="rendered">
+            
+
+<p>You can exclude the code, but include the output with teh <code>echo=False</code> option</p>
+
+
+<p>For example, we can show the fibbonnaci numbers less than 100:</p>
+
+
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">3</span>]: <span class="kw">def</span> fib(n):
+   ...:     a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>
+   ...:     <span class="cf">while</span> a <span class="op">&lt;</span> n:
+   ...:         <span class="bu">print</span>(a, end<span class="op">=</span><span class="st">' '</span>)
+   ...:         a, b <span class="op">=</span> b, a<span class="op">+</span>b
+   ...:
+   ...: <span class="bu">print</span>(<span class="st">", "</span>.join(fib(<span class="dv">100</span>)))</code></pre></div>
+
+
+<div class="output">
+<pre><code>0 1 1 2 3 5 8 13 21 34 55 89 </code></pre>
+</div>
+
+
+<div class="output">
+<pre><code>---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-3-cb85eea26f52&gt; in &lt;module&gt;()
+      5         a, b = b, a+b
+      6 
+----&gt; 7 print(", ".join(fib(100)))
+
+TypeError: can only join an iterable</code></pre>
+</div>
+
+
+        </div>
+
+    </div>
+    <hr>
+    
+    <div class="area">
         <h2 id="exceptions">Exceptions</h2>
 
         <div class="source">
@@ -162,13 +226,13 @@ raise ValueError("ValueError!")
 <p>By default, exceptions are displayed and the stitching continues</p>
 
 
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">3</span>]: <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"ValueError!"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">4</span>]: <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"ValueError!"</span>)</code></pre></div>
 
 
 <div class="output">
 <pre><code>---------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
-&lt;ipython-input-3-0dec59cd0416&gt; in &lt;module&gt;()
+&lt;ipython-input-4-0dec59cd0416&gt; in &lt;module&gt;()
 ----&gt; 1 raise ValueError("ValueError!")
 
 ValueError: ValueError!</code></pre>
@@ -204,10 +268,10 @@ df.head()
         <div class="rendered">
             
 
-<p>We reuse IPython's <a href="http://ipython.readthedocs.io/en/stable/config/integrating.html">rich display system</a>, so objects defining <code>_repr_html_</code>, <code>_repr_latex_</code>, etc. will have that represented in the output. Pandas DataFrames, for example, do so</p>
+<p>We reuse IPython's rich display system, so objects defining <code>_repr_html_</code>, <code>_repr_latex_</code>, etc. will have that represented in the output. Pandas DataFrames, for example, do so</p>
 
 
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">4</span>]: <span class="im">import</span> pandas <span class="im">as</span> pd
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">5</span>]: <span class="im">import</span> pandas <span class="im">as</span> pd
    ...: pd.options.display.latex.<span class="bu">repr</span> <span class="op">=</span> <span class="va">True</span>
    ...: <span class="im">import</span> seaborn <span class="im">as</span> sns
    ...: df <span class="op">=</span> sns.load_dataset(<span class="st">"iris"</span>)
@@ -310,13 +374,13 @@ sns.pairplot(df, hue="species");
 <p>It's possible to capture rich output, like graphics</p>
 
 
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">5</span>]: <span class="op">%</span>matplotlib inline
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">6</span>]: <span class="op">%</span>matplotlib inline
    ...:
    ...: sns.<span class="bu">set</span>()
    ...: sns.pairplot(df, hue<span class="op">=</span><span class="st">"species"</span>)<span class="op">;</span></code></pre></div>
 
 
-<p><img alt="" id="unnamed_chunk_25" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxwAAALFCAYAAABJQeVbAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<p><img alt="" id="unnamed_chunk_27" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxwAAALFCAYAAABJQeVbAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xt8VOWdB/7P3CfJzCQkTC4kMxkMlwQERAKIEQjan7rF
 YhFi5RKxpFhbdfdnbHXt7uLrRftS29XW2v5ssa1F0F3xgr1o1V2lxUpFwbKiwUAFciUJIQnkMplc
 Zub3R5jJnDP3mTO35PP+R8+cM888M/OcMzw53+f7lTmdTieIiIiIiIhiQJ7oDhARERER0cTFCQcR
@@ -1681,13 +1745,13 @@ CHEY6nAQQgghhBBCHIY6HIQQQgghhBCHoQ4HIYQQQgghxGH+PwYFbEmdZKUYAAAAAElFTkSuQmCC
 <p>You can control image attributes from the chunk options</p>
 
 
-<div class="sourceCode" height="80px" width="80"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">6</span>]: <span class="op">%</span>matplotlib inline
+<div class="sourceCode" height="80px" width="80"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">7</span>]: <span class="op">%</span>matplotlib inline
    ...:
    ...: sns.<span class="bu">set</span>()
    ...: sns.pairplot(df, hue<span class="op">=</span><span class="st">"species"</span>)<span class="op">;</span></code></pre></div>
 
 
-<p><img alt="" height="80" id="unnamed_chunk_27" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxwAAALFCAYAAABJQeVbAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<p><img alt="" height="80" id="unnamed_chunk_29" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxwAAALFCAYAAABJQeVbAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xt8VOWdB/7P3CfJzCQkTC4kMxkMlwQERAKIEQjan7rF
 YhFi5RKxpFhbdfdnbHXt7uLrRftS29XW2v5ssa1F0F3xgr1o1V2lxUpFwbKiwUAFciUJIQnkMplc
 Zub3R5jJnDP3mTO35PP+R8+cM888M/OcMzw53+f7lTmdTieIiIiIiIhiQJ7oDhARERER0cTFCQcR

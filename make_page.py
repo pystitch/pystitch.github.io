@@ -1,4 +1,6 @@
 import bs4
+from textwrap import dedent
+from markdown import markdown
 from itertools import takewhile, dropwhile
 from toolz import partitionby
 from jinja2 import Template
@@ -31,7 +33,16 @@ def source_pairs(src):
 
 
 def render(source, rendered):
+    assert len(source) == len(rendered)
     pairs = [{"source": s, "rendered": r} for s, r in zip(source, rendered)]
+    preamble = dedent('''\
+    # Stitch
+
+    Stitch is a small python library for writing reproducible reports in
+    markdown.
+    ''')
+    preamble = markdown(preamble)
+
     tpl = Template('''
     <html>
     <head>
@@ -39,6 +50,7 @@ def render(source, rendered):
         <link rel="stylesheet" type="text/css" href="default.css">
     </head>
     <body>
+    {{ preamble|safe }}
     <div class="container">
     {% for pair in pairs %}
     <div class="area">
@@ -60,7 +72,7 @@ def render(source, rendered):
     </body>
     </html>
     ''')
-    result = tpl.render(pairs=pairs)
+    result = tpl.render(pairs=pairs, preamble=preamble)
     with open('index.html', 'w') as f:
         f.write(result)
 
