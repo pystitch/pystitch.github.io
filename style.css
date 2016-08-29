@@ -45,6 +45,12 @@ pre {
     padding: 0 0 50px;
     width: 700px;
     overflow: hidden;
+    background-color: #4D4D4D;
+}
+
+.source pre {
+    color: #d0d4d7;
+
 }
 
 .rendered {
