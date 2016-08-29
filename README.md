@@ -2,8 +2,9 @@ This is the repo to generate the [comparison site](https://pystitch.github.io).
 
 # Building the Page
 
-You'll need to install [stitch](https://github.com/pystitch/stitch) (only
-available on Github at the moment).
+If you're modifying the markdown source, you'll need to install
+[stitch](https://github.com/pystitch/stitch) (only available on Github at the moment).
+If you're just altering the CSS, you shouldn't need `stitch`.
 
 To make the page, use
 
