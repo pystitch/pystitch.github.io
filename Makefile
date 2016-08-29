@@ -1,8 +1,7 @@
-html:
-	stitch
+build/usage.html: src/usage.md
+	stitch src/usage.md -o build/usage.html
 
-updoad:
-	stitch
 
-clean:
-	rm -Rf build
+index.html: src/usage.md build/usage.html
+	python make_page.py
+
