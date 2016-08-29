@@ -36,6 +36,7 @@ def render(source, rendered):
     <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="default.css">
     </head>
     <body>
     <div class="container">
