@@ -64,7 +64,7 @@ def fib(n):
         print(a, end=' ')
         a, b = b, a+b
 
-print(", ".join(fib(100)))
+print(", ".join(list(fib(100))))
 ```
 
 ## Exceptions
