@@ -46,10 +46,23 @@ def render(source, rendered):
     tpl = Template('''
     <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="default.css">
     </head>
     <body>
+
+    <header class="nav-down">
+    <nav class="navbar navbar-default">
+      <ul class="nav navbar-nav">
+        <li><a href="src/tidy.md">Markdown</a></li>
+        <li><a href="build/tidy.html">HTML</a></li>
+        <li><a href="build/tidy.pdf">PDF</a></li>
+        <li><a href="build/tidy.docx">docx</a></li>
+      </ul>
+    </nav>
+    </header>
+
     {{ preamble|safe }}
     <div class="container">
     {% for pair in pairs %}
@@ -69,6 +82,10 @@ def render(source, rendered):
     <hr>
     {% endfor %}
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
     </body>
     </html>
     ''')
@@ -81,6 +98,7 @@ def main():
     source = source_pairs("src/usage.md")
     rendered = rendered_pairs("build/usage.html")
     render(source, rendered)
+
 
 if __name__ == '__main__':
     main()
