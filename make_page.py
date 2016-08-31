@@ -40,6 +40,8 @@ def render(source, rendered):
 
     Stitch is a small python library for writing reproducible reports in
     markdown.
+    This document shows you the source markdown side-by-side
+    with the executed and rendered HTML.
     ''')
     preamble = markdown(preamble)
 

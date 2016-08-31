@@ -20,7 +20,9 @@
 
     <h1>Stitch</h1>
 <p>Stitch is a small python library for writing reproducible reports in
-markdown.</p>
+markdown.
+This document shows you the source markdown side-by-side
+with the executed and rendered HTML.</p>
     <div class="container">
     
     <div class="area">
@@ -171,10 +173,10 @@ For example, we can show the fibbonnaci numbers less than 100:
 def fib(n):
     a, b = 0, 1
     while a < n:
-        print(a, end=' ')
+        print(a, end=', ')
         a, b = b, a+b
 
-print(", ".join(list(fib(100))))
+fib(100)
 ```
 
             </pre>
@@ -191,26 +193,14 @@ print(", ".join(list(fib(100))))
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">In [<span class="dv">3</span>]: <span class="kw">def</span> fib(n):
    ...:     a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>
    ...:     <span class="cf">while</span> a <span class="op">&lt;</span> n:
-   ...:         <span class="bu">print</span>(a, end<span class="op">=</span><span class="st">' '</span>)
+   ...:         <span class="bu">print</span>(a, end<span class="op">=</span><span class="st">', '</span>)
    ...:         a, b <span class="op">=</span> b, a<span class="op">+</span>b
    ...:
-   ...: <span class="bu">print</span>(<span class="st">", "</span>.join(<span class="bu">list</span>(fib(<span class="dv">100</span>))))</code></pre></div>
+   ...: fib(<span class="dv">100</span>)</code></pre></div>
 
 
 <div class="output">
-<pre><code>0 1 1 2 3 5 8 13 21 34 55 89 </code></pre>
-</div>
-
-
-<div class="output">
-<pre><code>---------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-&lt;ipython-input-3-cb8c62fa59b6&gt; in &lt;module&gt;()
-      5         a, b = b, a+b
-      6 
-----&gt; 7 print(", ".join(list(fib(100))))
-
-TypeError: 'NoneType' object is not iterable</code></pre>
+<pre><code>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, </code></pre>
 </div>
 
 

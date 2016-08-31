@@ -61,10 +61,10 @@ For example, we can show the fibbonnaci numbers less than 100:
 def fib(n):
     a, b = 0, 1
     while a < n:
-        print(a, end=' ')
+        print(a, end=', ')
         a, b = b, a+b
 
-print(", ".join(list(fib(100))))
+fib(100)
 ```
 
 ## Exceptions
