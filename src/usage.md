@@ -53,11 +53,12 @@ Now we see the output.
 
 ## Options
 
-You can exclude the code, but include the output with teh `echo=False` option
+You can exclude the code, but include the output with the `echo=False` option
 
-For example, we can show the fibbonnaci numbers less than 100:
+For example, we can show the fibbonnaci numbers less than 100, without
+bothering the reader with how we calculate them:
 
-```{python}
+```{python, echo=False}
 def fib(n):
     a, b = 0, 1
     while a < n:
