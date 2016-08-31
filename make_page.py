@@ -40,6 +40,12 @@ def render(source, rendered):
 
     Stitch is a small python library for writing reproducible reports in
     markdown.
+    It's heavily inspired by (read: a python clone of) <a href="http://yihui.name/knitr/">knitr</a> and
+    <a href="http://rmarkdown.rstudio.com">RMarkdown</a>.
+
+    You might want to consider <a href="https://github.com/janschulz/knitpy">Knitpy</a> instead
+    of stitch. It's been around longer is probably more usable at this point.
+
     This document shows you the source markdown side-by-side
     with the executed and rendered HTML.
     ''')
