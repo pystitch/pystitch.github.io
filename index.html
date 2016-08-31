@@ -7,16 +7,37 @@
     </head>
     <body>
 
-    <header class="nav-down">
     <nav class="navbar navbar-default">
-      <ul class="nav navbar-nav">
-        <li><a href="src/tidy.md">Markdown</a></li>
-        <li><a href="build/tidy.html">HTML</a></li>
-        <li><a href="build/tidy.pdf">PDF</a></li>
-        <li><a href="build/tidy.docx">docx</a></li>
-      </ul>
+      <div class="container-fluid">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	    <span class="sr-only">Toggle navigation</span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="https://github.com/pystitch/stitch">stitch</a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <ul class="nav navbar-nav">
+            <li ><a href="http://stitch.readthedocs.io/en/latest/">Docs</a></li>
+	    <li class="dropdown">
+	      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples<span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+		<li><a href="https://raw.githubusercontent.com/pystitch/pystitch.github.io/master/src/tidy.md">Markdown</a></li>
+		<li><a href="build/tidy.html">HTML</a></li>
+		<li><a href="build/tidy.pdf">PDF</a></li>
+		<li><a href="build/tidy.docx">docx</a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
     </nav>
-    </header>
+
 
     <h1>Stitch</h1>
 <p>Stitch is a small python library for writing reproducible reports in
@@ -3322,10 +3343,8 @@ options. With `stitch`, the defaults are flipped to True, and disabled with
     <hr>
     
     </div>
-
     <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
     </html>
     
