@@ -1,5 +1,5 @@
 ---
-tite: Reshaping & Tidy Data
+title: Tidy Data & Reshaping
 author: Tom Augspurger
 ---
 
