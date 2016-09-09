@@ -249,6 +249,8 @@ pseudoxml:
 make github:
 	ghp-import $(BUILDDIR)/html
 	touch .nojekyll
+	git add .nojekyll
+	git commit -m 'Add nojekyll'
 	git push -f origin gh-pages:$(GITHUB_PAGES_BRANCH)
 
 
