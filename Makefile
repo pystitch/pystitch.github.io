@@ -54,27 +54,38 @@ clean:
 	rm -rf build
 
 
-examples: build/ex_bokeh.html build/ex_altair.html build/side_by_side.html build/tidy.html build/tidy.pdf build/tidy.docx
+examples: build/ex_bokeh.html build/ex_altair.html build/side_by_side.html build/tidy.html build/tidy.pdf build/tidy.docx build/tidy.txt
 
 build/usage.html: src/usage.md
+	mkdir -p build
 	stitch src/usage.md -o build/usage.html
 
 build/side_by_side.html: src/usage.md build/usage.html
+	mkdir -p build
 	python make_page.py
 
+build/tidy.txt: src/tidy.md
+	mkdir -p build
+	cp src/tidy.md build/tidy.txt
+
 build/tidy.html: src/tidy.md
+	mkdir -p build
 	stitch src/tidy.md -o build/tidy.html
 
 build/tidy.pdf: src/tidy.md
+	mkdir -p build
 	stitch src/tidy.md -t latex -o build/tidy.pdf
 
 build/tidy.docx: src/tidy.md
+	mkdir -p build
 	stitch src/tidy.md -o build/tidy.docx
 
 build/ex_bokeh.html:
+	mkdir -p build
 	stitch src/ex_bokeh.txt -o build/ex_bokeh.html --no-self-contained
 
 build/ex_altair.html:
+	mkdir -p build
 	stitch src/ex_altair.txt -o build/ex_altair.html --no-self-contained
 
 .PHONY: html

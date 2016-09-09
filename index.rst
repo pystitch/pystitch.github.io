@@ -27,6 +27,11 @@ comparison of the markdown source and rendered output.
 Links to a more complicated document rendered in various formats
 is also provided.
 
+* :download:`Tidy Data (Markdown)<build/tidy.txt>`
+* :download:`Tidy Data (HTML)<build/tidy.html>`
+* :download:`Tidy Data (PDF)<build/tidy.pdf>`
+* :download:`Tidy Data (docx)<build/tidy.docx>`
+
 Install
 -------
 

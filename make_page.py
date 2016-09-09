@@ -79,14 +79,14 @@ def render(source, rendered):
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-            <li ><a href="http://stitch.readthedocs.io/en/latest/">Docs</a></li>
+            <li ><a href="https://pystitch.github.io">Docs</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples<span class="caret"></span></a>
           <ul class="dropdown-menu">
-        <li><a href="https://raw.githubusercontent.com/pystitch/pystitch.github.io/master/src/tidy.md">Markdown</a></li>
-        <li><a href="build/tidy.html">HTML</a></li>
-        <li><a href="build/tidy.pdf">PDF</a></li>
-        <li><a href="build/tidy.docx">docx</a></li>
+        <li><a href="tidy.txt">Markdown</a></li>
+        <li><a href="tidy.html">HTML</a></li>
+        <li><a href="tidy.pdf">PDF</a></li>
+        <li><a href="tidy.docx">docx</a></li>
           </ul>
         </li>
       </ul>
