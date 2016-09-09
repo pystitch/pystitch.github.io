@@ -120,7 +120,7 @@ def render(source, rendered):
     </html>
     ''')
     result = tpl.render(pairs=pairs, preamble=preamble)
-    with open('index.html', 'w') as f:
+    with open('build/side_by_side.html', 'w') as f:
         f.write(result)
 
 
