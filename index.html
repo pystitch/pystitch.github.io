@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>stitch &mdash; stitch 0.3.3 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="stitch 0.3.3 documentation" href="#"/>
+        <link rel="next" title="FAQ" href="faq.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> stitch
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">stitch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">Whatsnew</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">stitch</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>stitch</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+    
+        <div class="section" id="stitch">
+<h1>stitch<a class="headerlink" href="#stitch" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/TomAugspurger/stitch">stitch</a> is a library for
+making reproducible reports. It takes a markdown source file, executes
+the code chunks, captures the output, and stitches the output into the
+destination file.</p>
+<p>Those familiar with <a class="reference external" href="http://yihui.name/knitr/">knitr</a> and <a class="reference external" href="http://rmarkdown.rstudio.com">RMarkdown</a>
+will recognize it as a python clone of those great libraries.
+It&#8217;s also heavily influenced by <a class="reference external" href="https://github.com/janschulz/knitpy">knitpy</a>.</p>
+<p>While <code class="docutils literal"><span class="pre">stitch</span></code> is written in python, it can be used for
+any of the dozens of <a class="reference external" href="https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages">Jupyter
+kernels</a>.</p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>See the <a class="reference download internal" href="_downloads/side_by_side.html" download=""><code class="xref download docutils literal"><span class="pre">examples</span></code></a> site for a side-by-side
+comparison of the markdown source and rendered output.
+Links to a more complicated document rendered in various formats
+is also provided.</p>
+</div>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<p>At the moment, the name stitch is taken on PyPI via an inactive project.
+You can install stitch from PyPI via</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>pip install knotr
+</pre></div>
+</div>
+<p>I know, it&#8217;s confusing.
+I&#8217;ve filed a claim for <code class="docutils literal"><span class="pre">stitch</span></code> on PyPI, but I think the people working that support queue are over-worked.
+Once that gets processed, I&#8217;ll put it up on conda-forge as well.
+If you need a mnemonic, it&#8217;s &#8220;I want knitr, but <cite>not</cite> the one written in <cite>R</cite>.
+Also I wanted to confuse R users.
+And knots are kind of like a buggy version of knits.</p>
+<p>But to be clear the package name and command-line tool is <code class="docutils literal"><span class="pre">stitch</span></code>.</p>
+<p>You&#8217;ll also need to have a recent version of pandoc.
+Either use your system package manager, or use the <code class="docutils literal"><span class="pre">pypandoc</span></code> provided on conda-forge, which includes
+pandoc.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>You write a markdown file, and include code chunks that look like</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="sb">```</span><span class="o">{</span>kernel_name, <span class="o">[</span>chunk_name<span class="o">]</span>, **kwds<span class="o">}</span>
+<span class="c1"># your code here</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">kernel_name</span></code> is required (see <code class="docutils literal"><span class="pre">jupyter</span> <span class="pre">kernelspec</span> <span class="pre">list</span></code>).
+The <code class="docutils literal"><span class="pre">chunk_name</span></code> is optional; it controls things like the name assigned
+to plots if they&#8217;re saved to disk.</p>
+<p>The supported keyword arguments are</p>
+<ul class="simple">
+<li>eval: bool, whether to execute the code chunk</li>
+<li>echo: bool, whether to include the input code chunk in the output</li>
+</ul>
+<p>More options will be added.</p>
+<p>The command-line interface is essentailly the same as pandocs.
+For the most part you call</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>stitch input_file.md -o output_file.html
+</pre></div>
+</div>
+<p>You can use <code class="docutils literal"><span class="pre">-t</span></code> for the output type, or infer it from the file extension
+of <code class="docutils literal"><span class="pre">-op</span></code>.
+All other options are passed through to pandoc.</p>
+<p>stitch defines a few new options that control stitch-specific features</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--no-standalone</span></code></li>
+<li><code class="docutils literal"><span class="pre">--no-self-contained</span></code></li>
+</ul>
+</div>
+<div class="section" id="what-s-in-a-name">
+<h2>What&#8217;s in a Name?<a class="headerlink" href="#what-s-in-a-name" title="Permalink to this headline">¶</a></h2>
+<p>The name <code class="docutils literal"><span class="pre">stitch</span></code> has a couple meanings. Like R&#8217;s <code class="docutils literal"><span class="pre">knit</span></code>, we are
+taking a source document, executing code chunks, and <code class="docutils literal"><span class="pre">knit</span></code>ing or
+<code class="docutils literal"><span class="pre">stitch</span></code>ing the output back into the document.</p>
+<p>The second meaning is for <code class="docutils literal"><span class="pre">stitch</span></code> bringing together a bunch of great
+libraries, minimizing the work we have to do ourselves. <code class="docutils literal"><span class="pre">stitch</span></code> uses</p>
+<ul class="simple">
+<li><a class="reference external" href="http://pandoc.org/MANUAL.html">Pandoc</a> markdown parsing and
+conversion to the destination output</li>
+<li><a class="reference external" href="http://jupyter.org">jupyter</a>, specifically
+<a class="reference external" href="https://jupyter-client.readthedocs.io/en/latest/">jupyter-client</a>
+for managing kernels, passing code to kernels, and capturing the
+output</li>
+<li><a class="reference external" href="https://github.com/jgm/pandocfilters/">pandocfilters</a> for
+converting code-chunk output to pandoc&#8217;s AST</li>
+<li><a class="reference external" href="https://github.com/coldfix/pypandoc">pypandoc</a> for communicating
+with pandoc</li>
+<li><a class="reference external" href="http://click.pocoo.org">click</a> for the command-line interface.</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">stitch</span></code> itself is fairly minimal. The main tasks are</p>
+<ul class="simple">
+<li>processing code-chunk arguments</li>
+<li>passing the correct outputs from the jupyter kernel to pandocfilters</li>
+<li>assembling all the chunks of text, code, and output in a sensible way</li>
+<li>making things look nice</li>
+</ul>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">stitch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#integrations">Integrations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#chunk-options">Chunk Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">Whatsnew</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#version-0-3-4">Version 0.3.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatsnew.html#version-0-3-3">Version 0.3.3</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+    
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Tom Augspurger.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.3.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
