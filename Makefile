@@ -54,7 +54,7 @@ clean:
 	rm -rf build
 
 
-examples: build/ex_bokeh.html build/ex_altair.html build/side_by_side.html build/tidy.html build/tidy.pdf build/tidy.docx build/tidy.txt
+examples: build/ex_bokeh.html build/ex_altair.html build/side_by_side.html build/tidy.html build/tidy.pdf build/tidy.docx build/tidy.txt build/ex_revealjs.html
 
 build/usage.html: src/usage.md
 	mkdir -p build
@@ -87,6 +87,12 @@ build/ex_bokeh.html:
 build/ex_altair.html:
 	mkdir -p build
 	stitch src/ex_altair.txt -o build/ex_altair.html --no-self-contained
+
+build/ex_revealjs.html: src/ex_revealjs.txt
+	mkdir -p build
+	stitch src/ex_revealjs.txt -o build/ex_revealjs.html -t html5 \
+        --template=revealjs.html --variable theme="beige" \
+        --no-highlight --section-divs
 
 .PHONY: html
 html: examples
