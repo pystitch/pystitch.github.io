@@ -35,6 +35,7 @@ is also provided.
 Install
 -------
 
+``stitch`` supports Python 3.5 and above.
 At the moment, the name stitch is taken on PyPI via an inactive project.
 You can install stitch from PyPI via
 
