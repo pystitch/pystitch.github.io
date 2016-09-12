@@ -35,7 +35,6 @@ is also provided.
 Install
 -------
 
-``stitch`` supports Python 3.5 and above.
 At the moment, the name stitch is taken on PyPI via an inactive project.
 You can install stitch from PyPI via
 
@@ -55,6 +54,13 @@ But to be clear the package name and command-line tool is ``stitch``.
 You'll also need to have a recent version of pandoc.
 Either use your system package manager, or use the ``pypandoc`` provided on conda-forge, which includes
 pandoc.
+
+Supported Python Versions
+-------------------------
+
+Stitch itself, the library, is only compatible with python 3.
+However, you can compile documents with a python2 environment, as
+long as you have a Python 2 kernel installed (see ``jupyter kernelspec list``).
 
 Usage
 -----
