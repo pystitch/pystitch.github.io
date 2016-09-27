@@ -1,6 +1,13 @@
 Whatsnew
 ========
 
+Version 0.3.5
+`````````````
+
+- Bug: Fixed a bug where empty messages from the IR kernel
+  would crash the parser (:issue:`52`).
+
+
 Version 0.3.4
 `````````````
 
