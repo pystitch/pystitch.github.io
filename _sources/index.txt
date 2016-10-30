@@ -27,6 +27,11 @@ comparison of the markdown source and rendered output.
 Links to a more complicated document rendered in various formats
 is also provided.
 
+* :download:`Tidy Data (Markdown)<build/tidy.txt>`
+* :download:`Tidy Data (HTML)<build/tidy.html>`
+* :download:`Tidy Data (PDF)<build/tidy.pdf>`
+* :download:`Tidy Data (docx)<build/tidy.docx>`
+
 Install
 -------
 
@@ -46,9 +51,16 @@ And knots are kind of like a buggy version of knits.
 
 But to be clear the package name and command-line tool is ``stitch``.
 
-You'll also need to have a recent version of pandoc.
+You'll also need pandoc>=1.18.
 Either use your system package manager, or use the ``pypandoc`` provided on conda-forge, which includes
 pandoc.
+
+Supported Python Versions
+-------------------------
+
+Stitch itself, the library, is only compatible with python 3.
+However, you can compile documents with a python2 environment, as
+long as you have a Python 2 kernel installed (see ``jupyter kernelspec list``).
 
 Usage
 -----

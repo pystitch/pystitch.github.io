@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Whatsnew &mdash; stitch 0.3.3 documentation</title>
+  <title>Whatsnew &mdash; stitch 0.3.4 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="stitch 0.3.3 documentation" href="index.html"/>
+    <link rel="top" title="stitch 0.3.4 documentation" href="index.html"/>
         <link rel="prev" title="API" href="api.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.3.3
+                0.3.4
               </div>
             
           
@@ -85,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Whatsnew</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-3-5">Version 0.3.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-0-3-4">Version 0.3.4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-0-3-3">Version 0.3.3</a></li>
 </ul>
@@ -133,17 +134,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-    
-        <div class="section" id="whatsnew">
+  <div class="section" id="whatsnew">
 <h1>Whatsnew<a class="headerlink" href="#whatsnew" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-0-3-5">
+<h2>Version 0.3.5<a class="headerlink" href="#version-0-3-5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Bug: Fixed a bug where empty messages from the IR kernel
+would crash the parser (<a class="reference external" href="https://github.com/pystitch/stitch/issues/52">GH52</a>).</li>
+</ul>
+</div>
 <div class="section" id="version-0-3-4">
 <h2>Version 0.3.4<a class="headerlink" href="#version-0-3-4" title="Permalink to this headline">¶</a></h2>
+<p>Version 0.3.4 is a minor release from 0.3.3;
+It contains several bug fixes and several new chunk options for controlling
+the output.</p>
 <ul class="simple">
-<li>API: Accept <code class="docutils literal"><span class="pre">fig.cap</span></code> as a chunk option to control the figure caption (<a class="reference external" href="https://github.com/pystitch/stitch/issues/38">GH38</a>:)</li>
+<li>BUG: Fixed a bug in the chunk options-line parser where arguments like <code class="docutils literal"><span class="pre">fig.cap=&quot;Figure,</span> <span class="pre">captioned&quot;</span></code>, quoted strings
+containing a comma, would break the parser (<a class="reference external" href="https://github.com/pystitch/stitch/issues/42">GH42</a>)</li>
+<li>API: Accept <code class="docutils literal"><span class="pre">fig.cap</span></code> as a chunk option to control the figure caption (<a class="reference external" href="https://github.com/pystitch/stitch/issues/38">GH38</a>)</li>
 <li>API: Exposed the <code class="docutils literal"><span class="pre">no-self-contained</span></code> command-line option to the stitching
 operation.</li>
 <li>API: Added a <code class="docutils literal"><span class="pre">warning</span></code> option for controling whether stderr is included in the output.</li>
 <li>API: Changed the <code class="docutils literal"><span class="pre">on_error</span></code> option to <code class="docutils literal"><span class="pre">error</span></code> for compatability with knitr and symmytry with the <code class="docutils literal"><span class="pre">warning</span></code> option.</li>
+<li>BUG: Various issues with javascript output (e.g. Bokeh plots) have been fixed (<a class="reference external" href="https://github.com/pystitch/stitch/issues/46">GH46</a>).</li>
+<li>ENH: The configuration system has been overhauled, so you should be able to set
+options at either the command-line, document metadata, or chunk level (<a class="reference external" href="https://github.com/pystitch/stitch/issues/36">GH36</a>)</li>
 </ul>
 </div>
 <div class="section" id="version-0-3-3">
@@ -155,7 +170,6 @@ operation.</li>
 </div>
 </div>
 
-    
 
            </div>
           </div>
@@ -195,7 +209,7 @@ operation.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.3.3',
+            VERSION:'0.3.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

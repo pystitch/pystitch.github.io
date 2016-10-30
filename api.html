@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API &mdash; stitch 0.3.3 documentation</title>
+  <title>API &mdash; stitch 0.3.4 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="stitch 0.3.3 documentation" href="index.html"/>
+    <link rel="top" title="stitch 0.3.4 documentation" href="index.html"/>
         <link rel="next" title="Whatsnew" href="whatsnew.html"/>
         <link rel="prev" title="FAQ" href="faq.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.3.3
+                0.3.4
               </div>
             
           
@@ -133,8 +133,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-    
-        <div class="section" id="api">
+  <div class="section" id="api">
 <h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="stitch.Stitch">
@@ -242,9 +241,17 @@ kernel name.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>meta, blocks</strong> : list</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>doc</strong> : dict</p>
 <blockquote class="last">
-<div><p>These should be compatible with pando&#8217;s JSON AST</p>
+<div><p>These should be compatible with pando&#8217;s JSON AST
+It&#8217;s a dict with keys</p>
+<blockquote>
+<div><ul class="simple">
+<li>pandoc-api-version</li>
+<li>meta</li>
+<li>blocks</li>
+</ul>
+</div></blockquote>
 </div></blockquote>
 </td>
 </tr>
@@ -273,7 +280,7 @@ kernel name.</p>
 
 <dl class="method">
 <dt id="stitch.Stitch.wrap_output">
-<code class="descname">wrap_output</code><span class="sig-paren">(</span><em>chunk_name</em>, <em>messages</em>, <em>execution_count</em>, <em>kp</em>, <em>attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#stitch.Stitch.wrap_output" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wrap_output</code><span class="sig-paren">(</span><em>chunk_name</em>, <em>messages</em>, <em>attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#stitch.Stitch.wrap_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrap the messages of a code-block.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -281,8 +288,6 @@ kernel name.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>chunk_name</strong> : str</p>
 <p><strong>messages</strong> : list of dicts</p>
-<p><strong>execution_count</strong> : int or None</p>
-<p><strong>kp</strong> : KernelPair</p>
 <p><strong>attrs</strong> : dict</p>
 <blockquote>
 <div><p>options from the source options-line.</p>
@@ -381,7 +386,6 @@ Default True.</p>
 </div>
 </div>
 
-    
 
            </div>
           </div>
@@ -423,7 +427,7 @@ Default True.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.3.3',
+            VERSION:'0.3.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
