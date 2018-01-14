@@ -4,6 +4,29 @@ API
 .. autoclass:: stitch.Stitch
    :members:
 
+
+Languages / Kernels / Styles mappings in YAML metadata
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mappings to markdown YAML metadata are added:
+
+-  from **language names** to **Jupyter kernels names**,
+-  from **language names** to **CSS classes names**,
+-  **language names** are used in Stitch code blocks settings.
+
+For example:
+
+.. code:: yaml
+
+    ---
+    kernels-map:
+      r: ir
+      py2: python2
+    styles-map:
+      py2: py
+    ...
+
+
 Chunk Options
 ~~~~~~~~~~~~~
 
@@ -13,6 +36,14 @@ Code chunks are blocks that look like
 
    ```{kernel_name, [chunk_name], **kwargs}
    # code
+   ```
+
+Example:
+
+.. code-block:: python
+
+   ```{python, chunk1, echo=False, results=pandoc}
+   print('# Hello header')
    ```
 
 The ``kernel_name`` is required, and ``chunk_name`` is optional.
@@ -28,24 +59,26 @@ All parameters are separated by a comma.
       Name for the chunk. Controls the filename for supporting files
       created by that chunk. Optional.
 
-   .. method:: echo(echo=True)
+   .. method:: echo(echo: bool=True)
 
-      whether to include the input-code in the rendered output.
-      Default True.
+      Whether to include the input-code in the rendered output.
+      Default ``True``.
 
-   .. method:: eval(eval=True)
+   .. method:: eval(eval: bool=True)
 
-      Whether to execute the code cell. Default True.
+      Whether to execute the code cell. Default ``True``.
 
-   .. method:: results(s)
+   .. method:: results(results: str=default)
 
-      str; how to display the results
+      How to display the results. Default is ``default``.
 
-      * hide: hide the chunk output (but still execute the chunk)
+      * ``results=default``: default behaviour,
+      * ``results=pandoc``: same as ``default`` but some Jupyter output is parsed as markdown: if the output is a stdout message that is not warning/error or if it has ``text/plain`` key. For example python ``print()`` output,
+      * ``results=hide``: hide the chunk output (but still execute the chunk).
 
-   .. method:: warning(True)
+   .. method:: warning(warning: bool=True)
 
-      bool; whether to include warnings (stderr) in the ouput.
+      Whether to include warnings (stderr) in the ouput. Default ``True``.
 
    .. method:: width(w)
 
