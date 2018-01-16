@@ -93,13 +93,14 @@ For the most part you call
    stitch input_file.md -o output_file.html
 
 You can use ``-t`` for the output type, or infer it from the file extension
-of ``-op``.
+of ``-o``.
 All other options are passed through to pandoc.
 
 stitch defines a few new options that control stitch-specific features
 
 * ``--no-standalone``
 * ``--no-self-contained``
+* ``--use-prompt``: enable code chunk prefixes
 
 
 What's in a Name?
